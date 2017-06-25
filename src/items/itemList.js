@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { itemsFetchData, itemsDeleteById, itemsDeleteAll } from '../actions/items';
+import { itemsFetchData, itemsDeleteById, itemsDeleteAll } from './itemsActions';
 
 class ItemList extends Component {
     componentDidMount() {
@@ -9,7 +9,7 @@ class ItemList extends Component {
 
     render() {
         if (this.props.hasErrored) {
-            return <p>Sorry! There was an error loading the items</p>;
+            return <p>Sorry! There was an error loading the items.</p>;
         }
 
         if (this.props.isLoading) {
